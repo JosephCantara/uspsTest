@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite" parallel="none" >
+
+    <test name="FirefoxTestCases">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name ="RegistrationPageTest"/>
+            <class name ="MainPageTest"/>
+            <class name ="LocationPageTest"/>
+
+        </classes>
+    </test>
+    <test name="ChromeTestCases">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name ="RegistrationPageTest" >
+            <methods>
+                <include name=".*TestCase1.*"/>
+                <include name=".*TestCase2.*"/>
+                <include name=".*TestCase3.*"/>
+            </methods>
+            </class>
+            <class name ="MainPageTest"/>
+            <class name ="LocationPageTest"/>
+        </classes>
+    </test>
+</suite>
